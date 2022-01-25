@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 function Header({countCartTotal}) {
     console.log(countCartTotal)
@@ -6,7 +7,12 @@ function Header({countCartTotal}) {
         <header className="block row center">
           <div>
             <a href="#/">
-              <h1>Japanese Restaurant</h1>
+              <h1>The Japanese Restaurant</h1>
+                <nav >
+                  <a href="#/nav"><Link to="/">Home</Link> </a> |
+                  <a href="#/nav"><Link to="/about">About</Link></a>
+                </nav>
+      
             </a>
           </div>
           <div>
@@ -17,7 +23,7 @@ function Header({countCartTotal}) {
               ) : (
                 ''
               )}
-            </a>{' '}
+            </a>{' '} |
             <a href="#/signin"> SignIn</a>
           </div>
         </header>
