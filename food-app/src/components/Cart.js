@@ -1,6 +1,5 @@
   
 import React from 'react';
-import FoodCart from './FoodCart'
 
 function Cart({cartItems, handleRemoveFromCart, handleAddToCart,}) {
     return (

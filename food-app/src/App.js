@@ -2,16 +2,17 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Header from "./components/Header";
-import FoodContainer from './components/FoodContainer';
-import Cart from './components/Cart';
 import Foot from './components/Foot';
+import HomePage from './components/HomePage';
+import FoodPage from './components/FoodPage';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [food, setFood] = useState([])
   const [cart, setCart] = useState([])
   
   useEffect(()=> {
-    fetch('http://localhost:3000/foods')
+    fetch('http://localhost:3001/foods')
     .then(res=>res.json())
     .then(data=> setFood(data))
   }, [])
@@ -58,16 +59,15 @@ function App() {
   return (
     <div className="App">
       <Header countCartTotal={sum()}/>
-      <div className="row">
-        <FoodContainer 
-        items= {food} 
-        handleAddToCart={handleAddToCart}/>
-        <Cart 
-        cartItems={cart} 
-        handleRemoveFromCart={handleRemoveFromCart}
-        handleAddToCart={handleAddToCart}
-        />
-      </div>
+        <Routes>
+          <Route path="/" element= {<HomePage />}/>
+          <Route path='/foods' element = {<FoodPage 
+            items= {food} 
+            handleAddToCart={handleAddToCart}
+            cartItems={cart} 
+            handleRemoveFromCart={handleRemoveFromCart}
+          />} />
+        </Routes>
       <Foot />
     </div>
   );
