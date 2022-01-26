@@ -29,7 +29,7 @@ function Cart({cartItems, handleRemoveFromCart, handleAddToCart,}) {
               <>
                 <hr></hr>
                 <div className="row">
-                  <button onClick={() => alert('Implement Checkout!')}>
+                  <button className="checkout" onClick={() => alert('Implement Checkout!')}>
                     Checkout
                   </button>
                 </div>

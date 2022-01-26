@@ -19,7 +19,7 @@ function FoodContainer({items, handleAddToCart}) {
     });
     return (
         <main className="block col-2">
-          <h2>Yummy Japanese Food</h2>
+          <h2>MENU</h2>
           <Filter 
           setCategoryFilter={setCategoryFilter}
           setFoodSearch={setFoodSearch}

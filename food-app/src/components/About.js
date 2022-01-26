@@ -9,9 +9,10 @@ function About(){
             <h2>ABOUT PAGE</h2>
             <h3>
                 A delicious casual Japanese Restaurant brought to you by Vivian and Hain.
+                <br/>
                 We pride ourselved in serving authentic Japanese Food and providing excellent service.
-                
-                A Japanese Restaurant's mission is to deliver the amazingly rich heritage to diners 
+                <br/>
+                The Japanese Restaurant's mission is to deliver the amazingly rich heritage to diners 
                 on a level not yet experienced at Flatiron.
 
             </h3>

@@ -4,11 +4,11 @@ function Filter({ setCategoryFilter, setFoodSearch }) {
   return (
     <>
       <div className="phase-buttons">
-        <button onClick={() => setCategoryFilter("All")}>All</button>
-        <button onClick={() => setCategoryFilter("sashimi/nigiri")}>sashimi/nigiri</button>
-        <button onClick={() => setCategoryFilter("rice dishes")}>rice dishes</button>
-        <button onClick={() => setCategoryFilter("starter")}>starter</button>
-        <button onClick={() => setCategoryFilter("noodles")}>noodles</button>
+        <button className="btn" onClick={() => setCategoryFilter("All")}>All</button>
+        <button className="btn" onClick={() => setCategoryFilter("sashimi/nigiri")}>Sushi</button>
+        <button className="btn" onClick={() => setCategoryFilter("rice dishes")}>Entrees</button>
+        <button className="btn" onClick={() => setCategoryFilter("starter")}>Starter</button>
+        <button className="btn" onClick={() => setCategoryFilter("noodles")}>Noodles</button>
       </div>
 
       <input
