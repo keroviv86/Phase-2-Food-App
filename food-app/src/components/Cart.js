@@ -1,9 +1,21 @@
   
-import React from 'react';
+import React, {useState}from 'react';
+import Receipt from './Receipt';
 
-function Cart({cartItems, handleRemoveFromCart, handleAddToCart,}) {
+function Cart({cartItems, handleRemoveFromCart, handleAddToCart}) {
+  const [checkout, setCheckout] = useState(false);
+  const foodPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  const taxPrice = foodPrice * 0.09;
+  const tipPrice = foodPrice * 0.15;
+  const totalPrice = foodPrice + taxPrice + tipPrice;
+
+  function checkoutHandler(){
+    setCheckout((checkout)=> !checkout)
+  }
+    
+  
     return (
-        <aside className="block col-1">
+        <div className="block col-1"> 
           <h2>Cart Items</h2>
           <div>
             {cartItems.length === 0 && <div>Cart is empty</div>}
@@ -29,16 +41,50 @@ function Cart({cartItems, handleRemoveFromCart, handleAddToCart,}) {
               <>
                 <hr></hr>
                 <div className="row">
-                  <button className="checkout" onClick={() => alert('Implement Checkout!')}>
-                    Checkout
-                  </button>
+                  <div className="col-2">Price of Food </div>
+                  <div className="col-1 text-right">${foodPrice.toFixed(2)}</div>
                 </div>
+
+                <div className="row">
+                  <div className="col-2">Tax Price</div>
+                   <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
+                </div>
+
+                <div className="row">
+                  <div className="col-2">Tip</div>
+                  <div className="col-1 text-right"></div>
+                ${tipPrice.toFixed(2)}
+                </div>
+
+                <div className="row">
+                  <div className="col-2">
+                    <strong>Total Price</strong>
+                  </div>
+                  <div className="col-1 text-right">
+                    <strong>${totalPrice.toFixed(2)}</strong>
+                  </div>
+                </div>
+
+
+                <div className="row">
+                  <button onClick={checkoutHandler}>Checkout</button>
+                </div>
+                {checkout ? (
+                  <Receipt
+                    setCheckout={setCheckout}
+                    checkout={checkout}
+                    cart={cartItems}
+                  />
+                ) : (
+                  "You have items in your cart"
+                )}
               </>
             )}
           </div>
-        </aside>
-      );
-    }
+        </div>
+    );
+  
+}
 
 
 
