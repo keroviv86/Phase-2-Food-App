@@ -5,7 +5,7 @@ function Foot() {
         <header className="block row center">
         <div>
           <a href="#/">
-            <h1>Made by Vivian & Hain </h1>
+            <h1>Menu Curated by Chefs' Vivian & Hain </h1>
           </a>
         </div>
       </header>
