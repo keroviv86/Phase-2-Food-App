@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react';
+
 import './App.css';
 import Header from "./components/Header";
 import Foot from './components/Foot';
@@ -8,11 +8,13 @@ import FoodPage from './components/FoodPage';
 import About from './components/About';
 import { Routes, Route } from "react-router-dom";
 
+import React, {useState, useEffect} from 'react';
 
 function App() {
   const [food, setFood] = useState([])
   const [cart, setCart] = useState([])
   
+  //fetch data from json server
   useEffect(()=> {
     fetch('http://localhost:3001/foods')
     .then(res=>res.json())

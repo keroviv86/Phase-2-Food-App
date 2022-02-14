@@ -12,8 +12,6 @@ function Cart({cartItems, handleRemoveFromCart, handleAddToCart}) {
   function checkoutHandler(){
     setCheckout((checkout)=> !checkout)
   }
-    
-  
     return (
         <div className="block col-1"> 
           <h2>Cart Items</h2>
