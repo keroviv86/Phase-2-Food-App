@@ -16,7 +16,7 @@ function App() {
   
   //fetch data from json server
   useEffect(()=> {
-    fetch('http://localhost:3001/foods')
+    fetch('https://fake-server-app-phase2.herokuapp.com/foods')
     .then(res=>res.json())
     .then(data=> setFood(data))
   }, [])
